@@ -241,7 +241,6 @@
     transform: translate(0%, 85%);
     transform-origin: 0%;
     border-radius: 24px;
-    
 }
 
 .introduction-image-box:hover {
@@ -260,7 +259,8 @@
     z-index: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-54%, -60%)
+    transform: translate(-54%, -60%);
+    clip-path: polygon(100% 0, 100% 85%, 56% 100%, 52% 100%, 0 82%, 0 0);
 }
 
 

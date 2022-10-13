@@ -6,66 +6,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    body {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100vh;
-      background-color: black;
-      z-index: -10;
-    }
-     .contact-btn {
-    position: relative;
-    color: var(--text-color);
-    font-size: 1.6rem;
-    width: 200px;
-    height: 60px;
-    border: none;
-    outline: none;
-    background-color: #00cfe6;
-    font-weight: bold;
-}
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #ccc;
+      }
+      .container {
+          width: 100vw;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
 
- .contact-btn::before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(230, 61, 61);
-    transition: 0.4 all ;
-    z-index: -1;
-}
+      .hexagon-shape {
+        position: relative;
+        width: 54px;
+        box-sizing: content-box;
+        border-width: 50px 18px 0;
+        border-style: solid;
+        border-color: red transparent;
+        overflow: hidden;
+      }
 
- .contact-btn::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    right: -5px;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    transition: 0.4 all;
-    z-index: -1;
-}
-
-.contact-btn:hover:after {
-  bottom: 5px;
-  right: 5px;
-}
-
-.contact-btn:hover:before {
-  top: 5px;
-  left: 5px;
-}
+      .hexagon-shape::before {
+        content: "";
+        position: absolute;
+        height: 0;
+        width: 0;
+        top: -85px;
+        left: -18px;
+        border-width: 0 45px 35px;
+        border-style: solid;
+        border-color: transparent transparent red;
+        }
   </style>
 </head>
 <body>
-  <div>
-    <button class="contact-btn">Contact with me</button>
-  </div>    
+  <div class="container">
+    <div class="hexagon-shape introduction-image-box">
+      <!-- <img class="my-image" src="./assets/img/my-img.png" alt=""> -->
+    </div>
+  </div>
 </body>
 </html>
