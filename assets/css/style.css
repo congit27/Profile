@@ -430,46 +430,41 @@
 .recent-project-section .project-slider {
     position: relative;
     margin-top: 100px;
-    margin-bottom: 60px;
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
+    
 }
 
 .project-slider .slider-item {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     width: 280px;
-    height: 260px;
-    padding: 24px 16px;
+    height: 280px;
     background-color: #4d5153;
     border-radius: 12px;
-}
-
-.project-slider .slider-item .img {
-    width: 48%;
-    height: auto;
-    background-image: url('../img/winter-project.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: 0px 0px 12px var(--primary-color);
-}
-
-.slider-item .img-left {
-    margin-bottom: 12px;
-}
-
-.slider-item .img-right {
-    margin-top: 12px;
+    padding: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 5px #ccc;
+    opacity: 80%;
 }
 
 .project-slider .main-slider-item {
     position: absolute;
-    top: -8%;
-    padding: 12px 0;
+    background-color: var(--primary-color);
+    left: calc( 50% - 160px);
+    top: 50%;
     width: 320px;
-    height: 300px;
-    background-color: #6991a4;
+    height: 320px;
+    transform: translateY(-50%) ;
+    z-index: 1;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    opacity: 100%;
+}
+
+.project-slider .slider-item .slider-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
 }
 
 
@@ -642,7 +637,7 @@
 }
 
 .footer-content .contact-me {
-    margin-bottom: 16px;
+    margin-bottom: 22px;
 }
 
 .footer-content .about-me h2,

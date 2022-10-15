@@ -26,11 +26,51 @@ const init = {
         './assets/img/img6.jpg',
         './assets/img/img7.jpg',
         './assets/img/img8.jpg',
+    ],
+    recentProjectSliders: [
+        {
+            src: './assets/img/covid19Landingpage.png',
+            isMainSlider: false
+        },
+        {
+            src: './assets/img/musicPlayer.png',
+            isMainSlider: false
+        },
+        {
+            src: './assets/img/profile.png',
+            isMainSlider: true
+        },
+        {
+            src: './assets/img/winterholiday.png',
+            isMainSlider: false
+        },
+        {
+            src: './assets/img/todosAppMobile.png',
+            isMainSlider: false
+        }
     ]
 }
 
 const actions = {
-    
+    prevItemSlider({ recentProjectSliders }) {
+        const temp = recentProjectSliders[recentProjectSliders.length-1].src
+        for (var i = recentProjectSliders.length-1; i > 0; i--) {
+            recentProjectSliders[i].src = recentProjectSliders[i - 1].src
+        }
+        recentProjectSliders[0].src = temp
+        
+        console.log(recentProjectSliders)
+    },
+
+    nextItemSlider({ recentProjectSliders }) {
+        const temp = recentProjectSliders[0].src
+        for (var i = 0; i < recentProjectSliders.length-1; i++) {
+            recentProjectSliders[i].src = recentProjectSliders[i + 1].src
+        }
+        recentProjectSliders[recentProjectSliders.length - 1 ].src = temp
+        
+        console.log(recentProjectSliders)
+    },
 }
 
 export default function reducer(state = init, action, args) {

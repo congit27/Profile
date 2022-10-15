@@ -1,30 +1,16 @@
 import html from '../lib/core.js'
+import { connect } from '../js/store.js'
 
-function ProjectSlider() {
+function ProjectSlider({ recentProjectSliders  }) {
     return html`
         <div class="project-slider">
-            <div class="slider-item">
-                <div class="img img-left"></div>
-                <div class="img img-right"></div>
-            </div>
-            <div class="slider-item">
-                <div class="img img-left"></div>
-                <div class="img img-right"></div>
-            </div>
-            <div class="slider-item main-slider-item">
-                <div class="img img-left"></div>
-                <div class="img img-right"></div>
-            </div>
-            <div class="slider-item">
-                <div class="img img-left"></div>
-                <div class="img img-right"></div>
-            </div>
-            <div class="slider-item">
-                <div class="img img-left"></div>
-                <div class="img img-right"></div>
-            </div>
+            ${recentProjectSliders.map(recentProjectSlider => html`
+                <div class="slider-item ${recentProjectSlider.isMainSlider && 'main-slider-item'}">
+                    <img class="slider-img" src="${recentProjectSlider.src}"/>
+                </div>
+            `)}
         </div>
     `
 }
 
-export default ProjectSlider
+export default connect()(ProjectSlider)
