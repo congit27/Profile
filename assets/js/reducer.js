@@ -41,7 +41,7 @@ const init = {
             isMainSlider: true
         },
         {
-            src: './assets/img/winterholiday.png',
+            src: './assets/img/winterHoliday.png',
             isMainSlider: false
         },
         {
