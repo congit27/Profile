@@ -48,28 +48,29 @@ const init = {
             src: './assets/img/todosAppMobile.png',
             isMainSlider: false
         }
-    ]
+    ],
+    runAnimationSlide: null,
 }
 
 const actions = {
-    prevItemSlider({ recentProjectSliders }) {
+    prevItemSlider(props) {
+        const recentProjectSliders = props.recentProjectSliders
         const temp = recentProjectSliders[recentProjectSliders.length-1].src
         for (var i = recentProjectSliders.length-1; i > 0; i--) {
             recentProjectSliders[i].src = recentProjectSliders[i - 1].src
         }
         recentProjectSliders[0].src = temp
-        
-        console.log(recentProjectSliders)
+        props.runAnimationSlide = true
     },
 
-    nextItemSlider({ recentProjectSliders }) {
+    nextItemSlider(props) {
+        const recentProjectSliders = props.recentProjectSliders
         const temp = recentProjectSliders[0].src
         for (var i = 0; i < recentProjectSliders.length-1; i++) {
             recentProjectSliders[i].src = recentProjectSliders[i + 1].src
         }
         recentProjectSliders[recentProjectSliders.length - 1 ].src = temp
-        
-        console.log(recentProjectSliders)
+        props.runAnimationSlide = false
     },
 }
 

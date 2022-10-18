@@ -185,3 +185,29 @@ html {
 .m-24 {
     margin: 0 24px;
 }
+
+/* Animation slide */
+@keyframes prevSlide {
+    0% {
+      transform:  translateX(-30%);
+    }
+    50% {
+    }
+    100% {
+      transform:  translateX(0);
+      opacity: 100%;
+    }
+}
+
+
+
+@keyframes nextSlide {
+    0% {
+        transform:  translateX(30%);
+    }
+    50% {
+    }
+    100% {
+        transform:  translateX(0);
+    }
+}
